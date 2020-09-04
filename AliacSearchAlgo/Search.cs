@@ -37,7 +37,7 @@ namespace AISearchSample
             n.Goal = true;
         }
 
-        public Node search() 
+        public Node search() //DFS
         {
             Node explored=null;
             //pangita Start node
@@ -84,7 +84,7 @@ namespace AISearchSample
         }
 
 
-        public Node searchone()
+        public Node searchone() //BFS
         {
             Node explored=null;
             //pangita Start node
@@ -131,7 +131,7 @@ namespace AISearchSample
             
         }
 
-        public Node searchtwo()
+        public Node searchtwo() //UCS
         {
             Node explored = null;
             //pangita Start node
@@ -161,13 +161,12 @@ namespace AISearchSample
                 Node next = null;
                 temp = explorer.getNeighbor();
                 t = temp.ToArray();
-                next = findMin(t);
                 for (int i = 0; i < t.Length; i++)
                 {
-                    if (((Node)t[i]).Expanded != true && ((Node)t[i]).Value == next.Value)
+                    if (((Node)t[i]).Expanded != true )
                     {
                         //MessageBox.Show(((Node)t[i]).Name + "added");
-                        fringe.add(next, explorer);
+                        fringe.add(((Node)t[i]), explorer);
                     }
                 }
                 explorer.Expanded = true;
@@ -177,7 +176,7 @@ namespace AISearchSample
             return explored;
         }
 
-        public Node searchthree()
+        public Node searchthree() //A*
         {
             Node explored = null;
             Heuristics h = new Heuristics();

@@ -26,6 +26,7 @@ namespace AliacSearchAlgo
         int to;
         int start;
         int goal;
+        int totalCost;
         Node explored;
         Search search;
         HillSearch hillsearch;
@@ -44,6 +45,7 @@ namespace AliacSearchAlgo
             to = -1;
             start = -1;
             goal = -1;
+            totalCost = 0;
             explored = null;
             search = null;
            
@@ -306,10 +308,23 @@ namespace AliacSearchAlgo
             Node path = explored;
             while (path != null && path.Origin != null)
             {
+                totalCost += path.Value;
                 g.DrawLine(new Pen(Brushes.Green, 5), path.X + 5, path.Y + 5, path.Origin.X + 5, path.Origin.Y + 5);
                 path = path.Origin;
             }
-           
+            if(nodeWithVal == true) 
+            {
+                textBox1.Visible = true;
+                label3.Visible = true;
+                label4.Visible = true;
+                label4.Text = "Total Cost: " + Convert.ToString(totalCost);
+            }
+            else
+            {
+                textBox1.Visible = false;
+                label3.Visible = false;
+                label4.Visible = false;
+            }
         }
 
         private void saveNodesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -425,6 +440,7 @@ namespace AliacSearchAlgo
             goal = -1;
             explored = null;
             search = null;
+            totalCost = 0;
             for (int y = 0; y < nodes.Count; y++)
             {
                 ((Node)nodes[y]).Moved = false;
@@ -432,7 +448,7 @@ namespace AliacSearchAlgo
                 ((Node)nodes[y]).Goal = false;
                 ((Node)nodes[y]).Origin = null;
                 ((Node)nodes[y]).Start = false;
-               
+
 
             }
                 pictureBox1.Refresh();
@@ -452,6 +468,7 @@ namespace AliacSearchAlgo
             to = -1;
             start = -1;
             goal = -1;
+            totalCost = 0;
             pictureBox1.Refresh();
         }
 
@@ -551,6 +568,21 @@ namespace AliacSearchAlgo
             else { MessageBox.Show("Start or Goal nodes not Set."); }
         }
 
+        private void showNodeValuesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!nodeWithVal)
+            {
+                nodeWithVal = true;
+                showNodeValuesToolStripMenuItem.Text = "Unshow Node Values";
+            }
+            else
+            {
+                nodeWithVal = false;
+                showNodeValuesToolStripMenuItem.Text = "Show Node Values";
+            }  
+            pictureBox1.Refresh();
+        }
 
+        
     }
 }

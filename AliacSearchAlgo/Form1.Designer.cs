@@ -67,6 +67,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.showNodeValuesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -82,7 +84,7 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(913, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(913, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -251,7 +253,8 @@
             this.setStartToolStripMenuItem,
             this.setGoalNodeToolStripMenuItem,
             this.clearAllNodesToolStripMenuItem,
-            this.editNodeValuesToolStripMenuItem});
+            this.editNodeValuesToolStripMenuItem,
+            this.showNodeValuesToolStripMenuItem});
             this.resetSearchToolStripMenuItem.Name = "resetSearchToolStripMenuItem";
             this.resetSearchToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
             this.resetSearchToolStripMenuItem.Text = "Node Settings";
@@ -380,6 +383,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 6;
+            this.textBox1.Visible = false;
             // 
             // label3
             // 
@@ -390,12 +394,31 @@
             this.label3.Size = new System.Drawing.Size(54, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Value:";
+            this.label3.Visible = false;
+            // 
+            // showNodeValuesToolStripMenuItem
+            // 
+            this.showNodeValuesToolStripMenuItem.Name = "showNodeValuesToolStripMenuItem";
+            this.showNodeValuesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.showNodeValuesToolStripMenuItem.Text = "Show Node Values";
+            this.showNodeValuesToolStripMenuItem.Click += new System.EventHandler(this.showNodeValuesToolStripMenuItem_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(364, 522);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 36);
+            this.label4.TabIndex = 7;
+            this.label4.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 567);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
@@ -455,6 +478,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStripMenuItem aSearchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showNodeValuesToolStripMenuItem;
+        private System.Windows.Forms.Label label4;
     }
 }
 
