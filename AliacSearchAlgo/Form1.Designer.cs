@@ -84,7 +84,7 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(913, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(913, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -379,7 +379,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(562, 9);
+            this.textBox1.Location = new System.Drawing.Point(562, 7);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 6;
